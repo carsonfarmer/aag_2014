@@ -130,10 +130,10 @@ Carson J. Q. Farmer
 
 ## Doing Science
 
-* <i class="fa fa-caret-right"></i> Spatial algorithms
-* <i class="fa fa-caret-right"></i> Spatial data (and standards)
-* <i class="fa fa-caret-right"></i> Libraries and frameworks
-* <i class="fa fa-caret-right"></i> **Integration**
+* <i class="fa fa-caret-right"></i> CARSI has a copter "drone"
+    * <i class="fa fa-caret-right"></i> Software is open
+    * <i class="fa fa-caret-right"></i> Hardware is open
+    * <i class="fa fa-caret-right"></i> 3D model for parts is open
 
 ## Obstacles
 
@@ -141,6 +141,10 @@ Carson J. Q. Farmer
 * <i class="fa fa-caret-right"></i> Publication credit
 * <i class="fa fa-caret-right"></i> Uncertainty
 * <i class="fa fa-caret-right"></i> **Reproducibility**
+* <i class="fa fa-caret-right"></i> Spatial algorithms
+* <i class="fa fa-caret-right"></i> Spatial data (and standards)
+* <i class="fa fa-caret-right"></i> Libraries and frameworks
+* <i class="fa fa-caret-right"></i> **Integration**
 
 --------------------
 
