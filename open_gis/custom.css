@@ -1,0 +1,114 @@
+@import url("font-awesome-4.0.3/css/font-awesome.css");
+
+body {
+    font-size: 30px;
+    color: black;
+    font-family: Palatino, serif;
+}
+
+.address {
+    margin: 0 !important;
+    font-size: .8em !important;
+    margin-left: 47px !important;
+    line-height: 1em;
+}
+
+.mono {
+    font-family: "Andale Mono", monospace;
+}
+
+#educator, #scientist, #user, #developer {
+    color: white;
+    text-align: center;
+}
+
+#who-am-i {
+    text-align: center;
+}
+
+#by-night {
+    color: white;
+}
+
+.reveal ul {
+    list-style: none;
+}
+
+.reveal li {
+    list-style: none;
+}
+
+.reveal em {
+    margin: 0;
+    font-style: italic;
+}
+
+.quote {
+    padding-bottom: 1em;
+}
+
+.reveal h1 {
+    font-size: 2em;
+    font-family: Helvetica, sans-serif;
+}
+
+.reveal h2 {
+    font-size: 1.5em;
+    font-family: Helvetica, sans-serif;
+}
+
+.reveal i {
+    font-family: 'FontAwesome';
+    font-style: normal;
+}
+
+.reveal img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.orange {
+    color: #FF8C00;
+}
+
+.green {
+    color: #4daf4a;
+}
+
+.blue {
+    color: #377eb8;
+}
+
+.purple {
+    color: #984ea3;
+}
+
+.fa-stack {
+    line-height: 1.8em;
+}
+
+.stacked-line-height {
+    line-height: 1.1em !important;
+}
+
+.stacked-line-height-2 {
+    line-height: 2.2em !important;
+}
+
+.reveal .slides {
+    text-align: left;
+}
+
+.reveal span {
+    vertical-align: middle;
+}
+
+a, a:hover, a:visited {
+    color: #ff7f00;
+    text-decoration: none;
+}
+
+.right {
+    float: right;
+}
+

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.min.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+    <link rel="stylesheet" href="custom.css"/>
+  <link rel="stylesheet" media="print" href="reveal.js/css/print/pdf.css" />
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="technical-implementation-issues" class="slide level1">
+<h1>Technical &amp; Implementation Issues</h1>
+</br></br></br> Carson J. Q. Farmer<br /><i class="fa fa-twitter fa-fw"></i> <a href="http://www.twitter.com/carsonfarmer/">@carsonfarmer</a><br /><i class="fa fa-globe fa-fw"></i> <a href="http://www.carsonfarmer.com">http://carsonfarmer.com/</a><br /><i class="fa fa-envelope-o fa-fw"></i> <script type="text/javascript">
+<!--
+h='&#104;&#x75;&#110;&#116;&#x65;&#114;&#46;&#x63;&#x75;&#110;&#x79;&#46;&#x65;&#100;&#x75;';a='&#64;';n='&#x63;&#x61;&#114;&#x73;&#x6f;&#110;&#46;&#102;&#x61;&#114;&#x6d;&#x65;&#114;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x63;&#x61;&#114;&#x73;&#x6f;&#110;&#46;&#102;&#x61;&#114;&#x6d;&#x65;&#114;&#32;&#x61;&#116;&#32;&#104;&#x75;&#110;&#116;&#x65;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x75;&#110;&#x79;&#32;&#100;&#x6f;&#116;&#32;&#x65;&#100;&#x75;</noscript><br /></br></br></br>
+<p style="float: right;">
+<a href="http://www.carsilab.org/"><img src="images/carsi-small.png" alt="CARSI Logo" /></a> <a href="http://www.cuny.edu/"><img src="images/cuny-small.png" alt="CUNY Logo" /></a>
+</p>
+
+</section>
+<section class="slide level1">
+
+<section id="who-am-i" class="level2">
+<h2><i class="fa fa-male fa-5x"></i></br>Who am I?</h2>
+</section>
+<section id="by-day" class="level2" data-background="#FFFF99">
+<h2><i class="fa fa-sun-o"></i> By day</h2>
+<ul>
+<li><i class="fa fa-caret-right"></i> Assistant Professor of GIScience (Hunter College, CUNY)</li>
+<li><i class="fa fa-caret-right"></i> Associate Director of <a href="http://www.carsilab.org/">CARSI</a> lab</li>
+<li><i class="fa fa-caret-right"></i> In the process of developing a new MGIS program*</li>
+<li><i class="fa fa-caret-right"></i> (Re)developing FOSS Geospatial Masterclass</li>
+</ul>
+</section>
+<section id="by-night" class="level2" data-background="#000033">
+<h2><i class="fa fa-moon-o"></i> By Night</h2>
+<ul>
+<li><i class="fa fa-caret-right"></i> Python hacker and developer</li>
+<li><i class="fa fa-caret-right"></i> Worked on <a href="http://www.qgis.org">QGIS</a> project since 2007</li>
+<li><i class="fa fa-caret-right"></i> Developed fTools (aka QGIS 'Vector' menu)</li>
+<li><i class="fa fa-caret-right"></i> Currently working on <a href="https://www.github.com/kjordahl/geopandas">GeoPandas</a> with Kelsey Jordahl</li>
+</ul>
+</section>
+</section>
+<section id="user-developer-educator-scientist" class="slide level1">
+<h1><span class="fa-stack fa-lg"><i class="fa fa-circle orange fa-stack-2x stacked-line-height"></i> <i class="fa fa-user fa-stack-1x fa-inverse stacked-line-height-2"></i></span>User</br><span class="fa-stack fa-lg"> <i class="fa fa-circle green fa-stack-2x stacked-line-height"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse stacked-line-height-2"></i></span>Developer</br><span class="fa-stack fa-lg"> <i class="fa fa-circle blue fa-stack-2x stacked-line-height"></i> <i class="fa fa-book fa-stack-1x fa-inverse stacked-line-height-2"></i></span>Educator </br><span class="fa-stack fa-lg"> <i class="fa fa-circle purple fa-stack-2x stacked-line-height"></i> <i class="fa fa-flask fa-stack-1x fa-inverse stacked-line-height-2"></i> </span>Scientist</h1>
+</section>
+<section class="slide level1">
+
+<section id="ask-not-what-open-culture-can-do-for-gis-ask-what-gis-can-do-for-open-culture" class="level2 orange">
+<h2><i class="quote fa fa-quote-left fa-2x pull-left"></i> ask not what open culture can do for GIS, ask what GIS can do for open culture</h2>
+<!-- ask not what Open GIS will do for you, but what together we can do for the freedom of knowledge -->
+
+</section>
+<section id="new-opportunities-are-plentiful" class="level2">
+<h2>New Opportunities are Plentiful</h2>
+<ul>
+<li><i class="fa fa-caret-right"></i> Pretty clear that GIS &quot;culture&quot; can benefit from Open &quot;culture&quot;</li>
+<li><i class="fa fa-caret-right"></i> GIS is technology driven - So is open culture
+<ul>
+<li><i class="fa fa-caret-right"></i> Open Source</li>
+<li><i class="fa fa-caret-right"></i> Open Standards</li>
+<li><i class="fa fa-caret-right"></i> Open Data</li>
+<li><i class="fa fa-caret-right"></i> Open Science</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-do-we-bring-to-the-table-how-can-we-further-the-open-culture-agenda" class="level2 purple">
+<h2><i class="fa fa-question-circle fa-2x pull-left"></i>What Do We Bring to the Table? (How Can We Further the Open Culture Agenda?)</h2>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="user" class="level2" data-background="#FF8C00">
+<h2><i class="fa fa-user fa-5x"></i></br> User</h2>
+</section>
+<section id="users-as-clients" class="level2">
+<h2>Users as Clients</h2>
+<ul>
+<li><i class="fa fa-caret-right"></i> Educating users
+<ul>
+<li><i class="fa fa-caret-right"></i> Submitting bug reports, interacting with developers</li>
+<li><i class="fa fa-caret-right"></i> Better standards (I think even ESRI folks would like to move away from shapefiles), best practices, identifying integration options (what works best with what?)</li>
+</ul></li>
+<li><i class="fa fa-caret-right"></i> Things I want as a user
+<ul>
+<li><i class="fa fa-caret-right"></i> Marketing?</li>
+<li><i class="fa fa-caret-right"></i> More commercial support (my admin folks want this)</li>
+<li><i class="fa fa-caret-right"></i> Package 'solutions'</li>
+<li><i class="fa fa-caret-right"></i> More information!</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="developer" class="level2" data-background="#4daf4a">
+<h2><i class="fa fa-terminal fa-5x"></i></br>Developer</h2>
+</section>
+<section id="challenges" class="level2">
+<h2>Challenges</h2>
+<ul>
+<li><i class="fa fa-caret-right"></i> Lots of issues!</li>
+<li><i class="fa fa-caret-right"></i> Most are surmountable and sometimes exciting
+<ul>
+<li><i class="fa fa-caret-right"></i> Speed, Multiprocessing, Big Data, UX &amp; Design, Cloud Computing, Distributed Computing, Web vs Desktop, Interoperability, etc</li>
+</ul></li>
+<li><i class="fa fa-caret-right"></i> Challenges?
+<ul>
+<li><i class="fa fa-caret-right"></i> Balancing <em>my</em> needs with those of users...</li>
+<li><i class="fa fa-caret-right"></i> Professional 'products'?</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="educator" class="level2" data-background="#377eb8">
+<h2><i class="fa fa-book fa-5x"></i></br> Educator</h2>
+</section>
+<section id="questions" class="level2">
+<h2>Questions</h2>
+<ul>
+<li><i class="fa fa-caret-right"></i> I'm in geography department...
+<ul>
+<li><i class="fa fa-caret-right"></i> How to attract students with computational literacy?</li>
+<li><i class="fa fa-caret-right"></i> <em>Should</em> they know how?</li>
+<li><i class="fa fa-caret-right"></i> Do they <em>need</em> to know how to code?</li>
+<li><i class="fa fa-caret-right"></i> Open GIS is about a lot more than
+<ul>
+<li>Open Source, Specifications, and Technical bits...</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="skills" class="level2">
+<h2>Skills</h2>
+<ul>
+<li><i class="fa fa-caret-right"></i> Here's what a recent survey says:
+<ul>
+<li><i class="fa fa-caret-right"></i> We want ESRI experts today...</li>
+<li><i class="fa fa-caret-right"></i> We OpenGIS experts in 5 years...</li>
+<li><i class="fa fa-caret-right"></i> And we want them <em>trained in both</em> now...</li>
+<li><i class="fa fa-caret-right"></i> Oh, and they should all be able to read code.</li>
+</ul></li>
+</ul>
+</section>
+<section id="knowledge" class="level2">
+<h2>Knowledge</h2>
+<ul>
+<li><i class="fa fa-caret-right"></i> This is very practical, but do all students really need to know/care about
+<ul>
+<li><i class="fa fa-question fa-fw"></i> Source Code</li>
+<li><i class="fa fa-question fa-fw"></i> Open Specifications</li>
+<li><i class="fa fa-check fa-fw"></i> Open Licensing</li>
+<li><i class="fa fa-check fa-fw"></i> Open Data</li>
+<li><i class="fa fa-check fa-fw"></i> Open Content</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="scientist" class="level2" data-background="#984ea3">
+<h2><i class="fa fa-flask fa-5x"></i></br> Scientist</h2>
+</section>
+<section id="doing-science" class="level2">
+<h2>Doing Science</h2>
+<ul>
+<li><i class="fa fa-caret-right"></i> Is Open Science special, or is that just plain good Science?</li>
+<li><i class="fa fa-caret-right"></i> Algorithmic training</li>
+<li><i class="fa fa-caret-right"></i> Access to computing infrastructure</li>
+<li><i class="fa fa-caret-right"></i> Publication credit
+<ul>
+<li>Or as some of my senior academics called it... wasting my time!</li>
+</ul></li>
+<li><i class="fa fa-caret-right"></i> Standards and frameworks</li>
+<li><i class="fa fa-caret-right"></i> <strong>Reproducibility</strong></li>
+</ul>
+</section>
+</section>
+<section id="thanks" class="slide level1">
+<h1>Thanks!</h1>
+</br></br></br> <i class="fa fa-twitter fa-fw"></i> <a href="http://www.twitter.com/carsonfarmer/">@carsonfarmer</a><br /><i class="fa fa-globe fa-fw"></i> <a href="http://www.carsonfarmer.com">http://carsonfarmer.com/</a><br /><i class="fa fa-envelope-o fa-fw"></i> <script type="text/javascript">
+<!--
+h='&#104;&#x75;&#110;&#116;&#x65;&#114;&#46;&#x63;&#x75;&#110;&#x79;&#46;&#x65;&#100;&#x75;';a='&#64;';n='&#x63;&#x61;&#114;&#x73;&#x6f;&#110;&#46;&#102;&#x61;&#114;&#x6d;&#x65;&#114;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x63;&#x61;&#114;&#x73;&#x6f;&#110;&#46;&#102;&#x61;&#114;&#x6d;&#x65;&#114;&#32;&#x61;&#116;&#32;&#104;&#x75;&#110;&#116;&#x65;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x75;&#110;&#x79;&#32;&#100;&#x6f;&#116;&#32;&#x65;&#100;&#x75;</noscript><br /><i class="fa fa-home fa-fw"></i> <span style="font-size: 0.9em;">Carson J. Q. Farmer</span>
+<p class="address">
+Department of Geography</br> Hunter College - CUNY</br> 695 Park Avenue</br> New York, NY, 10065
+</p>
+
+</br>
+<p style="float: right;">
+<a href="http://www.carsilab.org/"><img src="images/carsi-small.png" alt="CARSI Logo" /></a> <a href="http://www.cuny.edu/"><img src="images/cuny-small.png" alt="CUNY Logo" /></a>
+</p>
+
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'beige', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+  </body>
+</html>
